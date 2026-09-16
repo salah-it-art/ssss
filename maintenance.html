@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>صيانة السيارات</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+<nav>
+    <h2>دليل السيارات</h2>
+
+    <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="maintenance.html">الصيانة</a></li>
+        <li><a href="modifications.html">التعديل</a></li>
+        <li><a href="login.html">تسجيل الدخول</a></li>
+        <li><a href="contact.html">تواصل معنا</a></li>
+    </ul>
+</nav>
+
+<main class="container">
+
+    <section class="section-title">
+        <h1>صيانة السيارات</h1>
+        <p>أهم الأشياء التي يجب الاهتمام بها في السيارة</p>
+    </section>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="images/oil.jpg" alt="تغيير زيت المحرك">
+            <i class="fa-solid fa-oil-can card-icon"></i>
+            <h3>تغيير زيت المحرك</h3>
+            <p>
+                تغيير زيت المحرك بشكل دوري يساعد على المحافظة على المحرك.
+            </p>
+
+            <button class="details-btn"
+                    data-title="تغيير زيت المحرك"
+                    data-text="يجب فحص مستوى زيت المحرك وتغييره حسب المدة أو المسافة التي تحددها الشركة المصنعة للسيارة.">
+                عرض التفاصيل
+            </button>
+        </div>
+
+        <div class="card">
+            <img src="images/air-filter.jpg" alt="تغيير فلتر الهواء">
+            <i class="fa-solid fa-wind card-icon"></i>
+            <h3>فلتر الهواء</h3>
+            <p>
+                تنظيف أو تغيير فلتر الهواء يساعد على دخول الهواء بشكل جيد للمحرك.
+            </p>
+
+            <button class="details-btn"
+                    data-title="فلتر الهواء"
+                    data-text="يجب فحص فلتر الهواء بشكل دوري واستبداله عندما يكون متسخًا أو تالفًا.">
+                عرض التفاصيل
+            </button>
+        </div>
+
+        <div class="card">
+            <img src="images/brakes.jpg" alt="صيانة فرامل السيارة">
+            <i class="fa-solid fa-car-burst card-icon"></i>
+            <h3>الفرامل</h3>
+            <p>
+                يجب فحص الفرامل باستمرار للتأكد من سلامتها.
+            </p>
+
+            <button class="details-btn"
+                    data-title="الفرامل"
+                    data-text="فحص الفرامل يساعد على اكتشاف تآكل الفحمات أو وجود مشكلة في نظام الفرامل مبكرًا.">
+                عرض التفاصيل
+            </button>
+        </div>
+
+        <div class="card">
+            <img src="images/battery.jpg" alt="صيانة بطارية السيارة">
+            <i class="fa-solid fa-car-battery card-icon"></i>
+            <h3>البطارية</h3>
+            <p>
+                التأكد من البطارية يساعد على تشغيل السيارة بشكل طبيعي.
+            </p>
+
+            <button class="details-btn"
+                    data-title="بطارية السيارة"
+                    data-text="يجب التأكد من نظافة أقطاب البطارية وفحصها عند وجود صعوبة في تشغيل السيارة.">
+                عرض التفاصيل
+            </button>
+        </div>
+
+        <div class="card">
+            <img src="images/tires.jpg" alt="صيانة الإطارات">
+            <i class="fa-solid fa-car-side card-icon"></i>
+            <h3>الإطارات</h3>
+            <p>
+                فحص ضغط الإطارات وحالتها من الأمور المهمة للسلامة.
+            </p>
+
+            <button class="details-btn"
+                    data-title="إطارات السيارة"
+                    data-text="يجب فحص ضغط الإطارات والتأكد من عدم وجود تلف أو تآكل غير طبيعي.">
+                عرض التفاصيل
+            </button>
+        </div>
+
+        <div class="card">
+            <img src="images/cooling.jpg" alt="صيانة نظام التبريد">
+            <i class="fa-solid fa-temperature-half card-icon"></i>
+            <h3>نظام التبريد</h3>
+            <p>
+                يجب التأكد من مستوى سائل التبريد وسلامة النظام.
+            </p>
+
+            <button class="details-btn"
+                    data-title="نظام التبريد"
+                    data-text="فحص سائل التبريد والراديتر يساعد على المحافظة على درجة حرارة المحرك.">
+                عرض التفاصيل
+            </button>
+        </div>
+
+    </div>
+
+    <section class="ajax-section">
+
+        <h2>نصيحة صيانة</h2>
+
+        <button id="loadTip" class="btn">
+            تحميل نصيحة
+        </button>
+
+        <p id="tipResult"></p>
+
+    </section>
+
+</main>
+
+<!-- Modal -->
+
+<div id="detailsModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close">&times;</span>
+
+        <h2 id="modalTitle"></h2>
+
+        <p id="modalText"></p>
+
+    </div>
+
+</div>
+
+<footer>
+
+    <div class="social-icons">
+
+        <a href="https://www.facebook.com/" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+
+        <a href="https://www.instagram.com/" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="https://wa.me/967777123456" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+    </div>
+
+    <p>دليل صيانة وتعديل السيارات © 2026</p>
+
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
